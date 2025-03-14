@@ -1,0 +1,14 @@
+<section id="modal-content-wrapper" style="padding: 10px;">
+    <header id="modal-header">
+        <h1 id="modal-title">Confirmation</h1>
+    </header>
+
+    <div class="field">
+        <span style="font-size: 24px;">Do you want to {{data.method}} this record?</span>
+    </div>
+
+    <div style="margin-top: 20px;">
+        <button mat-raised-button (click)="closeModal('Yes')" color="primary" >{{data.method}}</button>
+        <button mat-raised-button (click)="closeModal('No')" color="primary"  style="margin-left: 10px;">Cancel</button>
+    </div>
+</section>
