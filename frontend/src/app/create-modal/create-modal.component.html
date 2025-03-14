@@ -1,0 +1,38 @@
+
+<section id="modal-content-wrapper" style="padding: 10px;">
+    <header id="modal-header">
+        <h1 id="modal-title">Create a New Student Record</h1>
+    </header>
+
+    <form [formGroup]="CreateStudentForm">
+        <div class="field">
+            <mat-form-field appearance="fill" style="width: 100%;">
+                <mat-label>Student ID</mat-label>
+                <input matInput formControlName="student_id" required [maxLength]="8">
+            </mat-form-field>
+        </div>
+
+        <div class="field">
+            <mat-form-field appearance="fill" style="width: 100%;">
+                <mat-label>Student Name</mat-label>
+                <input matInput formControlName="student_name" required>
+            </mat-form-field>
+        </div>
+
+        <div class="field">
+            <mat-form-field appearance="fill" style="width: 100%;">
+                <mat-label>Email</mat-label>
+                <input matInput formControlName="email">
+            </mat-form-field>
+        </div>
+    </form>
+
+    <div class="button-container" style="margin-top: 20px;">
+        <button mat-raised-button (click)="onSubmit(CreateStudentForm.value)" style="background-color: rgb(27, 199, 70); color: white;">Create</button>
+        <button mat-raised-button (click)="closeModal()" style="margin-left: 10px;">Cancel</button>
+    </div>
+
+    <div class="message" style="margin-top: 10px; color: red;">
+        {{message}}
+    </div>
+</section>

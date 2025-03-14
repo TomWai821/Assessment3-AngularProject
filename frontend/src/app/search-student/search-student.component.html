@@ -1,0 +1,61 @@
+<div class="d-flex align-items-center justify-content-center text-center" style="padding-top: 50px; margin-top: 50px;">
+    <form [formGroup]="searchForm" style="display: flex; align-items: center; justify-content: center;">
+      
+      <mat-form-field appearance="fill" style="width: 250px; margin-right: 10px;">
+          <mat-label>Search</mat-label>
+          <mat-select (selectionChange)="toggleInput($event.value)" [value]="isStudentIDSelected">
+                <mat-option value="student_id">Student ID</mat-option>
+                <mat-option value="student_name">Student Name</mat-option>
+          </mat-select>
+      </mat-form-field>
+      
+      <div *ngIf="isStudentIDSelected">
+          <mat-form-field appearance="fill" style="width: 250px; margin-right: 10px;">
+              <mat-label>Student ID</mat-label>
+              <input matInput formControlName="student_id" minlength="8" maxlength="8">
+          </mat-form-field>
+      </div>
+
+      <div *ngIf="!isStudentIDSelected">
+          <mat-form-field appearance="fill" style="width: 250px; margin-right: 10px;">
+              <mat-label>Student Name</mat-label>
+              <input matInput formControlName="student_name">
+          </mat-form-field>
+      </div>
+
+        <button mat-raised-button color="primary" style="margin-bottom: 20px; height: 40px;" (click)="onSubmit(searchForm.value)">Search</button>
+        <button mat-raised-button color="primary" style="margin-left: 10px; margin-bottom: 20px; height: 40px;" (click)="createModalButton()">Create Student</button>
+    </form>
+    
+    <div style="width: 100%; display: flex; justify-content: center; font: 24px">{{message}}</div>
+</div>
+
+<div class="d-flex justify-content-center text-center" style="padding: 24px;">
+    <table mat-table [dataSource]="serverDataArray" class="mat-elevation-z8 custom-table" style="border-collapse: collapse; width: 100%;">
+        <ng-container matColumnDef="student_id">
+          <th mat-header-cell *matHeaderCellDef style="border: 1px solid #ccc;"> Student ID</th>
+          <td mat-cell *matCellDef="let data" style="border: 1px solid #ccc;">{{ data.student_id }}</td>
+        </ng-container>
+      
+        <ng-container matColumnDef="student_name">
+          <th mat-header-cell *matHeaderCellDef style="border: 1px solid #ccc;"> Student name </th>
+          <td mat-cell *matCellDef="let data" style="border: 1px solid #ccc;">{{ data.student_name }}</td>
+        </ng-container>
+      
+        <ng-container matColumnDef="email">
+          <th mat-header-cell *matHeaderCellDef style="border: 1px solid #ccc;"> Email </th>
+          <td mat-cell *matCellDef="let data" style="border: 1px solid #ccc;">{{ data.email }}</td>
+        </ng-container>
+      
+        <ng-container matColumnDef="actions">
+          <th mat-header-cell *matHeaderCellDef style="border: 1px solid #ccc;"> Actions </th>
+          <td mat-cell *matCellDef="let data" style="border: 1px solid #ccc;">
+              <button mat-raised-button (click)="openEditModal(data)" style="color: white; background-color: rgb(51, 153, 255);">Edit</button>
+              <button mat-raised-button (click)="openDeleteModal(data)" style="margin-left: 10px; color: white; background-color: rgb(242, 41, 41);">Delete</button>
+          </td>
+        </ng-container>
+      
+        <tr mat-header-row *matHeaderRowDef="['student_id', 'student_name', 'email', 'actions']"></tr>
+        <tr mat-row *matRowDef="let row; columns: ['student_id', 'student_name', 'email', 'actions'];"></tr>
+      </table>
+</div>
