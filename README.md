@@ -33,7 +33,7 @@ The Assessment3-AngularProject is built using Angular to showcase modern front-e
 ## License
 MIT License
 
-Copyright (c) [2025] [TomWai821]
+Copyright (c) 2025 TomWai821
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
