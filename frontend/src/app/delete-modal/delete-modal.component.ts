@@ -58,7 +58,7 @@ export class DeleteModalComponent
 
     onDelete()
     {
-        const url = `http://localhost:4433/Student/Student.php/Student/StudentID/${this.data.student_id}`;
+        const url = `http://localhost/Student/Student.php/Student/StudentID/${this.data.student_id}`;
 
         this.http.delete<{success: boolean, message: string}>(url)
         .subscribe(

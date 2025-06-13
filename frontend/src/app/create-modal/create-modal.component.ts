@@ -82,7 +82,7 @@ export class CreateModalComponent
 
     onCreate(formValue: any)
     {
-        const url = "http://localhost:4433/Student/Student.php/Student/";
+        const url = "http://localhost/Student/Student.php/Student/";
 
         const payload = 
         {

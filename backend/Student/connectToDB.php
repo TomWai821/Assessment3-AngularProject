@@ -1,5 +1,5 @@
 <?php
-    $ip = "localhost:3307";
+    $ip = "localhost";
     $username = "root";
     $password = "";
     $dbName = "student";

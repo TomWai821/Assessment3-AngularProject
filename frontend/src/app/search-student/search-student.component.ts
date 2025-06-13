@@ -88,7 +88,7 @@ export class SearchStudentComponent
 
     onGet(formValue: any)
     {
-        let url = "http://localhost:4433/Student/Student.php/Student/";
+        let url = "http://localhost/Student/Student.php/Student/";
 
         if(formValue.student_name)
         {
