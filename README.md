@@ -26,9 +26,27 @@ The Assessment3-AngularProject is built using Angular to showcase modern front-e
 1. **Clone the repository:**
    ```bash
    git clone https://github.com/TomWai821/Assessment3-AngularProject.git
+
+2. **Setup the backend**
+   - Copy or move the Student folder (or file) into your local xampp\htdocs directory
+   - Open your preferred MySQL client (such as phpMyAdmin or MySQL Workbench) and import the Student.sql file to set up the database on your server
+
+3. **Launch Visual Studio Code and Open the file folder**
+   ```bash
    cd Assessment3-AngularProject
-   npm install
+   
+4. **Input the command on Assessment3-AngularProject directory at command prompt**
+   ```bash
    ng serve
+   
+5. **Port Configuration**
+   Ensure you update the port numbers as required in the following files:
+   - connectToDB.php
+   - createModalComponent.ts
+   - editModalComponent.ts
+   - deleteModalComponent.ts<br>
+   (Verify the file name and update if necessary)
+
 
 ## License
 MIT License
